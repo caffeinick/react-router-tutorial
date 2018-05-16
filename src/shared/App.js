@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, About } from 'pages';
+import { Home, About, Posts } from 'pages';
+import Menu from 'components/Menu';
 
 class App extends Component {
   render() {
     return (
       <div>
+        <Menu />
         {/* 주소에 path가 주어지지 않았을 때 기본적으로 보여주는 컴포넌트 설정 */}
         {/* exact -> path에 정해진 경로와 정확히 맞아떨어져야 렌더링 */}
         <Route exact path="/" component={Home} />
@@ -16,6 +18,7 @@ class App extends Component {
           {/* /about 경로로 들어왔을 때 보여줄 페이지 */}
           <Route path="/about" component={About} />
         </Switch>
+        <Route path="/posts" component={Posts} />
 
         {/* 라우트로 설정한 컴포넌트가 전달받는 props */}
         {/* history: push, replace 등을 통해 다른 경로로 이동하거나 앞, 뒤 페이지로 이동 */}

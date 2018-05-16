@@ -1,7 +1,6 @@
 import React from 'react';
 import queryString from 'query-string';
 import PropTypes from 'prop-types';
-import Menu from 'components/Menu';
 
 const About = ({ location, match }) => {
   // 현재 경로에 대한 정보, 쿼리에 대한 정보
@@ -17,7 +16,6 @@ const About = ({ location, match }) => {
 
   return (
     <div>
-      <Menu />
       <h2>About {match.params.name}</h2>
       {detail && 'detail: blahblah'}
     </div>
